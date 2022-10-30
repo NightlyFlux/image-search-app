@@ -11,7 +11,7 @@ const App = () => {
 
   const getImages = async () => {
     await fetch(
-      `https://pixabay.com/api/?key=20377226-949b34f72cb65f541c8202704&q=${searchQuery}&per_page=30&page=${currentPage}`
+      `https://pixabay.com/api/?key=${process.env.REACT_APP_API_KEY}&q=${searchQuery}&per_page=30&page=${currentPage}`
     )
       .then((response) => response.json())
       .then((data) => {
